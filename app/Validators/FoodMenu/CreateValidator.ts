@@ -7,6 +7,7 @@ export default class CreateValidator {
   public schema = schema.create({
     productName: schema.string([rules.trim()]),
     price: schema.number([rules.unsigned()]),
+    quantity: schema.number([rules.unsigned()]),
   })
 
   /**

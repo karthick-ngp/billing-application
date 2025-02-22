@@ -14,6 +14,9 @@ export default class FoodMenu extends BaseModel {
   public price: number
 
   @column()
+  public quantity: number
+
+  @column()
   public isArchive: boolean
 
   @column.dateTime({ autoCreate: true })

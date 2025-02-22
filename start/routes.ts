@@ -24,6 +24,20 @@ Route.group(() => {
   Route.get('/', 'FoodMenusCOntroller.get')
   Route.put('/:id', 'FoodMenusCOntroller.update')
   Route.delete('/:id', 'FoodMenusCOntroller.delete')
+}).prefix('FoodMenu').middleware('auth')
 
 
-}).prefix('FoodMenu')
+Route.get('/login','AuthController.login')
+
+Route.group(()=>{
+  Route.post('/register','CustomerDetailsController.create')
+  // Route.get('/userDetail', 'CustomerDetailsController.get')
+  // Route.get('/login','AuthController.login')
+}).prefix('Auth')
+
+// Route.group(()=>{
+//   Route.get('/auth/google/redirect', 'AuthController.googleRedirect')
+//   Route.get('/auth/google/callback', 'AuthController.googleCallback')
+//   Route.get('/auth/facebook/redirect', 'AuthController.facebookRedirect')
+//   Route.get('/auth/facebook/callback', 'AuthController.facebookCallback')
+// }).prefix('Auth')
